@@ -1,0 +1,123 @@
+Problem Statment:
+  Write a program about escaping a room guarded by the troll. The player can either fight the troll or answer three questions. Searching the room should result in a sword to fight the troll.
+  The outcome should either be escape or death.
+
+Nouns:
+  Troll, room, question.
+
+Verbs:
+  Escape, search, fight, answer, death.
+
+
+Defining Diagram:
+  INPUTS:
+    fight, answer, search, questionCounter, sword. 
+  
+  PROCESSING:
+  Display situation to user
+  prompt user with options to pick
+  IF fight then
+    Check if sword is true, 
+      IF false then death
+      ELSE
+      Slay the troll and escape
+  ENDIF
+  
+  IF answer then
+    check questionCounter
+    IF questionCounter = 1 then
+      what is your name?
+    ELSE IF questionCounter = 2 then 
+      what is your favorite colour?
+    ELSE IF questionCounter = 3 then
+      What is the airspeed of an unladen swallow?
+    ELSE IF question counter = 4 then
+      Thank you for playing friend. You may go.
+  ENDIF
+  
+  IF search then
+    change sword to True
+    repeat prompt
+  ENDIF
+  
+  Output message for each ending.
+  
+  OUTPUT: 
+    Good ending
+    Bad ending
+    
+    
+SOLUTION ALGORITHM:
+escapeFinal
+  set questionCounter to 1
+  set sword to false
+  alert user to situation
+  WHILE questionCounter < 4 THEN
+    prompt user with options
+    IF fight THEN
+      IF sword = true THEN
+        display "You have slain Frank the Freindly Troll, you monster."
+      ELSE 
+      IF sword = false THEN
+        display "The troll defended it's self and you are slain."
+      ENDIF
+    ELSE
+    IF search THEN
+      sword = true
+      display "You find a decorative sword above the fireplace."
+    ELSE
+    IF answer THEN
+      IF questionCounter = 1 THEN
+        prompt user with 'The troll asks "What is your Name?"'
+        increase questionCounter by 1
+      ELSE
+      IF questionCounter = 2 THEN
+        prompt user with 'The troll asks "What is your favorite colour?"'
+        increase question count by 1
+      ELSE
+      IF questionCounter = 3 THEN
+        prompt user with 'The troll asks "What is the airspeed of an unladen swallow?"'
+        increase questionCounter by 1
+      ENDIF
+    ENDIF
+    ENDWHILE
+  display "Thank you for answering my questions friend. Right or wrong you are free to go."
+END
+
+Testing Methodology
+
+Tests:
+Search, Fight.
+
+Expected:
+Bad ending
+
+Actual:
+Bad ending. Sometimes will show parts on screen of other endings if they were done prior.
+
+Tests:
+Answer x3
+
+Expected:
+Friend ending
+
+Actual:
+Proper read out of text and final screen.
+
+Tests:
+answerx2 and easterEgg
+
+Expected:
+Final screen with GIF and message.
+
+Actual:
+Proper screen displays wth all assets.
+
+Tests:
+fight with no search.
+
+Expected: 
+message displayed to user.
+
+Actual:
+Proper messaage displayed. All ending can be pursued after.
